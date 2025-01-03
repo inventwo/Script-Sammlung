@@ -1,6 +1,7 @@
 // Datenpunkte
 // Den SourceAnalytix Pfad bitte OHNE 'sourceanalytix.0.' angeben
 // Die target Datenpunkte bitte vorher manuell anlegen. Datenpunkt-Typ: Liste (array)
+// In meinem Beispiel ist es der Verbrauch eines 3D-Drucker
 
 const data = {
     "energy": {
