@@ -1,0 +1,111 @@
+// Datenpunkte - Den SourceAnalytix Pfad bitte OHNE 'sourceanalytix.0.' angeben - Die target Datenpunkte bitte vorher manuell anlegen
+const data = {
+    "energy": {
+        path: "alias__0__inventwo__Bambulab__Drucker_Zählerstand",  // Name device 
+        targetWeek: "0_userdata.0.3D-Druck.BambuLab.Stromverbrauch.Bambu_currentWeek",    // Zielpfad "Woche"
+        targetMonth: "0_userdata.0.3D-Druck.BambuLab.Stromverbrauch.Bambu__currentYear"   //Zielpfad "Monat"
+    }
+};
+
+// AB HIER: FINGER WEG ;)
+
+// Wochentage
+const days = {
+    0: "Montag",
+    1: "Dienstag",
+    2: "Mittwoch",
+    3: "Donnerstag",
+    4: "Freitag",
+    5: "Samstag",
+    6: "Sonntag",
+};
+
+// Monate
+const months = {
+    0: "Januar",
+    1: "Februar",
+    2: "März",
+    3: "April",
+    4: "Mai",
+    5: "Juni",
+    6: "Juli",
+    7: "August",
+    8: "September",
+    9: "Oktober",
+    10: "November",
+    11: "Dezember",
+};
+
+class classDevice {
+    constructor(obj) {
+
+        this.targetWeek = obj.targetWeek;
+        this.targetMonth = obj.targetMonth;
+        this.path = `sourceanalytix.0.${obj.path}`
+
+        // Week
+        this.currentWeek = `currentYear.consumed.currentWeek`;
+        this.costCurrenWeek = `currentYear.costs.currentWeek`;
+        this.summaryConsumpWeek = `currentYear.consumed.02_currentWeek`;
+        this.summaryCostsWeek = `currentYear.costs.02_currentWeek`;
+
+        // Month
+        this.currentMonth = `${(new Date().getFullYear())}.consumed.months`;
+        this.costCurrentMonth = `${(new Date().getFullYear())}.costs.months`;
+        this.summaryConsumpYear = `currentYear.consumed.05_currentYear`;
+        this.summaryCostsYear = `currentYear.costs.05_currentYear`;
+
+        // Werte aus den DPs holen
+        /**
+        * @param {string} target // Zielpfad
+        * @param {string} pathConsump // Verbrauch / (Woche, Monat, Jahr)
+        * @param {string} pathCosts // Kosten / (Woche, Monat, Jahr)
+        * @param {string} summaryConsump // Verbrauch gesamt / (Woche, Monat, Jahr)
+        * @param {string} summaryCosts // Kosten gesamt / (Woche, Monat, Jahr)
+        */
+        this.getObject = async (target, timeUnit, pathConsump, pathCosts, summaryConsump, summaryCosts) => {
+
+            let arrTemp = [];
+            const data = await Array.prototype.slice.apply($(`state[id="${this.path}.${pathConsump}*"]`));
+            const costs = await Array.prototype.slice.apply($(`state[id="${this.path}.${pathCosts}*"]`));
+
+            // @ts-ignore
+            this.unit = getObject(data[0]).common.unit;
+            for (const i of Object.keys(data)) {
+                let result = {
+                    "date": timeUnit[i],
+                    "value": `${getState(data[i]).val} ${this.unit}`,
+                    "price": `${parseFloat(getState(costs[i]).val) * 100 / 100} €`,
+                };
+                arrTemp.push(result)
+            };
+            arrTemp.push({ "date": "", "value": "", "price": "" });   // Leerzeile einfuegen
+            arrTemp.push({ "date": "Summe", "value": `${getState(`${this.path}.${summaryConsump}`).val} ${this.unit}`, "price": `${getState(`${this.path}.${summaryCosts}`).val} €` }) // Gesamtsummen einfügen
+            // console.warn(arrTemp);
+            setStateAsync(target, arrTemp, true);
+        };
+
+        this.week = async () => this.getObject(this.targetWeek, days, this.currentWeek, this.costCurrenWeek, this.summaryConsumpWeek, this.summaryCostsWeek);
+        this.month = async () => this.getObject(this.targetMonth, months, this.currentMonth, this.costCurrentMonth, this.summaryConsumpYear, this.summaryCostsYear);;
+
+    };
+};
+
+async function loop() {
+    for (const i of Object.keys(data)) {
+
+        const device = new classDevice(data[i]);
+
+        device.week();
+        device.month();
+
+        schedule("*/5 * * * *", async () => {
+            device.week();
+            device.month();
+        });
+        
+    };
+
+};
+
+loop();
