@@ -1,4 +1,7 @@
-// Datenpunkte - Den SourceAnalytix Pfad bitte OHNE 'sourceanalytix.0.' angeben - Die target Datenpunkte bitte vorher manuell anlegen
+// Datenpunkte
+// Den SourceAnalytix Pfad bitte OHNE 'sourceanalytix.0.' angeben
+// Die target Datenpunkte bitte vorher manuell anlegen. Datenpunkt-Typ: Liste (array)
+
 const data = {
     "energy": {
         path: "alias__0__inventwo__Bambulab__Drucker_Zählerstand",  // Name device 
