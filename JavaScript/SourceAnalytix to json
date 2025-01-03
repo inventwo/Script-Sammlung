@@ -41,7 +41,7 @@ class classDevice {
 
         this.targetWeek = obj.targetWeek;
         this.targetMonth = obj.targetMonth;
-        this.path = `sourceanalytix.0.${obj.path}`
+        this.path = `sourceanalytix.0.${obj.path}`;
 
         // Week
         this.currentWeek = `currentYear.consumed.currentWeek`;
