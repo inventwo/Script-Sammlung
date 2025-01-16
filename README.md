@@ -1,4 +1,4 @@
-![inventwo-scripte](https://github.com/user-attachments/assets/8995e3a3-a5d0-4ed5-9d1a-eac35495e26b)
+![inventwo-scripte](https://github.com/user-attachments/assets/a499b6a3-ce82-4005-946e-3763baf701a6)
 
 ---
 
