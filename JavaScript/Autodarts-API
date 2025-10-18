@@ -11,13 +11,19 @@ const net = require("net");
 const INTERVAL = 2000; // alle 2 Sekunden
 const CONNECTION_TIMEOUT = 1000; // Timeout für Reachability-Test (in ms)
 
+// - Zieldatenpunkte
 const BASE_ID = "0_userdata.0.Autodarts.API";
-const AUTODARTS_HOST = "192.168.130.190";
+// - Die IP vom Boardmanager
+const AUTODARTS_HOST = "192.168.130.190"; 
+// - Der Port vom Boardmanager
 const AUTODARTS_PORT = 3180;
+
 const AUTODARTS_PATH = "/api/state";
 
 const PLAYER_ID = "player1";
+// - Spielername (es wird nur eine Player-ID gespeichert)
 const PLAYER_NAME = "SKVAREL";
+
 const MAX_THROWS = 3;
 
 // Letzter bekannter Status
