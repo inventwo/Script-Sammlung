@@ -1,9 +1,10 @@
 // Autodarts API Script für ioBroker (mit Reachability-Datenpunkt)
-// by inventwo 2025
+// By inventwo 2025
 // ===============================================================
 // - Prüft vor jeder API-Abfrage, ob der Raspberry erreichbar ist
 // - Vermeidet Log-Spam, wenn das Gerät aus ist
 // - Setzt Datenpunkt "reachable" (true/false)
+// - Alle bekannten Features bleiben erhalten
 
 const http = require("http");
 const net = require("net");
@@ -11,18 +12,17 @@ const net = require("net");
 const INTERVAL = 2000; // alle 2 Sekunden
 const CONNECTION_TIMEOUT = 1000; // Timeout für Reachability-Test (in ms)
 
-// - Zieldatenpunkte
-const BASE_ID = "0_userdata.0.Autodarts.API";
-// - Die IP vom Boardmanager
-const AUTODARTS_HOST = "192.168.130.190"; 
-// - Der Port vom Boardmanager
-const AUTODARTS_PORT = 3180;
+const BASE_ID = "0_userdata.0.Autodarts.API"; // Zieldatenpunkte
+
+const AUTODARTS_HOST = "192.168.130.190"; // Die IP vom Boardmanager
+
+const AUTODARTS_PORT = 3180; // Der Port vom Boardmanager
 
 const AUTODARTS_PATH = "/api/state";
 
 const PLAYER_ID = "player1";
-// - Spielername (es wird nur eine Player-ID gespeichert)
-const PLAYER_NAME = "SKVAREL";
+
+const PLAYER_NAME = "SKVAREL"; // Spielername (es wird nur eine Player-ID gespeichert)
 
 const MAX_THROWS = 3;
 
