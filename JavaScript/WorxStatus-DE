@@ -13,7 +13,7 @@ const targetStateGermanId  = '0_userdata.0.WORX.Status_DE';
 // Übersetzungstabelle Englisch → Deutsch
 // ==============================================
 const translation = {
-        "IDLE": "bereit",
+    "IDLE": "bereit",
     "Home": "in der Ladestation",
     "Start sequence": "Startsequenz läuft",
     "Leaving home": "verlässt die Ladestation",
