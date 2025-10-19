@@ -1,0 +1,106 @@
+// ===============================
+// Worx Rasenmäher Status Übersetzer
+// By inventwo 2025
+// ===============================
+
+// ID des Original-Datenpunkts (Status vom Worx-Adapter)
+const mowerStateId = 'worx.0.xxx.mower.status';
+
+// Ziel-Datenpunkte (werden automatisch erstellt, falls sie fehlen)
+const targetStateEnglishId = '0_userdata.0.WORX.Status_RAW';
+const targetStateGermanId  = '0_userdata.0.WORX.Status_DE';
+
+// ==============================================
+// Übersetzungstabelle Englisch → Deutsch
+// ==============================================
+const translation = {
+    "IDLE": "Bereit",
+    "Home": "In der Ladestation",
+    "Start sequence": "Startsequenz läuft",
+    "Leaving home": "Verlässt die Ladestation",
+    "Follow border": "Folgt dem Begrenzungsdraht",
+    "Searching home": "Sucht die Ladestation",
+    "Searching border": "Sucht Begrenzung",
+    "Mowing": "Mäht",
+    "Lifted": "Angehoben",
+    "Trapped": "Eingeklemmt / blockiert",
+    "Blade blocked": "Messer blockiert",
+    "Debug": "Diagnosemodus",
+    "Driving": "Fährt",
+    "Digital fence escape": "Virtuelle Begrenzung verlassen",
+    "Going home": "Fährt zur Ladestation",
+    "Zone training": "Zonentraining",
+    "Border Cut": "Begrenzungsschnitt",
+    "Searching zone": "Sucht Zone",
+    "Pause": "Pausiert",
+    "Map training (completable)": "Kartentraining (abschließbar)",
+    "Map processing": "Karte wird verarbeitet",
+    "Upgrading firmware": "Firmware wird aktualisiert",
+    "Moving to zone": "Fährt zur Zone",
+    "Ready for training": "Bereit für Kartentraining",
+    "Map download in progress": "Karte wird heruntergeladen",
+    "Map upload in progress": "Karte wird hochgeladen",
+    "Map training paused": "Kartentraining pausiert",
+    "Map training (not completable)": "Kartentraining (nicht abschließbar)",
+    "Border crossing": "Überquert Begrenzung",
+    "Exploring lawn": "Erkundet Rasenfläche",
+    "Moving to recovery point": "Fährt zum Wiederherstellungspunkt",
+    "Waiting for position": "Wartet auf GPS-Position",
+    "Map training (driving)": "Kartentraining (Fahrt)",
+    "Map training (rolling back)": "Kartentraining (Rückfahrt)",
+    "Unknown": "Unbekannt"
+};
+
+// ==============================================
+// Hilfsfunktion: Ziel-Datenpunkte automatisch anlegen
+// ==============================================
+function ensureState(id, name) {
+    if (!existsState(id)) {
+        createState(id, {
+            name: name,
+            type: 'string',
+            role: 'text',
+            read: true,
+            write: false,
+            def: '',
+        });
+        log(`Datenpunkt '${id}' wurde neu angelegt.`, 'info');
+    }
+}
+
+// ==============================================
+// Hauptfunktion: Status aktualisieren
+// ==============================================
+function updateMowerStatus() {
+    const mowerState = getState(mowerStateId).val;
+    const mowerObject = getObject(mowerStateId);
+
+    let mowerStatusText = 'Unknown';
+    if (mowerObject && mowerObject.common && mowerObject.common.states) {
+        const states = mowerObject.common.states;
+        mowerStatusText = states[mowerState] || 'Unknown';
+    }
+
+    const mowerStatusGerman = translation[mowerStatusText] || mowerStatusText;
+
+    setState(targetStateEnglishId, mowerStatusText, true);
+    setState(targetStateGermanId, mowerStatusGerman, true);
+
+    log(`Rasenmäher-Status geändert: ${mowerStatusText} → ${mowerStatusGerman}`, 'info');
+}
+
+// ==============================================
+// Initialisierung
+// ==============================================
+
+// Ziel-Datenpunkte sicherstellen
+ensureState(targetStateEnglishId, 'Rasenmäher Status (Englisch)');
+ensureState(targetStateGermanId,  'Rasenmäher Status (Deutsch)');
+
+// Trigger: bei jeder Statusänderung automatisch aktualisieren
+on({id: mowerStateId, change: 'ne'}, updateMowerStatus);
+
+// Initial einmal ausführen
+updateMowerStatus();
+
+log('Worx Rasenmäher Status-Übersetzer gestartet ✅', 'info');
