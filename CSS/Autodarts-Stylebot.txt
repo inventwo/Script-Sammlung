@@ -1,15 +1,15 @@
 /* ------------------------------------- */
 /* ----------- skvarel Theme ----------- */
 /* ---- Stylebot Code für Autodarts ---- */
-/* - Version 1.0.0 - Stand: 16.11.2025 - */
+/* - Version 1.1.0 - Stand: 16.11.2025 - */
 /* ------------------------------------- */
 :root{
   --theme-bg: #000000;
   --theme-text-color: #000000;
-  --theme-text-highlight-color: #00ffff;
+  --theme-text-highlight-color: #9fdb58;
   --theme-navigation-bg: #434343;
   --theme-navigation-item-color: #666666;
-  --theme-player-badge-bg: #1155cc;
+  --theme-player-badge-bg: #9fdb58;
   --theme-current-bg: #0c343d;
 }
 div.css-gmuwbf {
@@ -26,7 +26,7 @@ span.chakra-badge.css-1g1qw76 {
   background-color: var(--theme-player-name-bg);
 }
 p.chakra-text.css-0 {
-  font-size: 36px;
+  font-size: 30px;
 }
 button.chakra-button.css-d6eevf {
   background-color: var(--theme-navigation-item-color);
@@ -187,7 +187,7 @@ p.chakra-text.ad-ext-player-score.css-18w03sn {
 
 span.css-3fr5p8 {
   background-color: #9fdb58;
-  color: #222222;
+  color: #222;
 }
 
 p.chakra-text.ad-ext-player-score.css-1r7jzhg {
@@ -196,7 +196,7 @@ p.chakra-text.ad-ext-player-score.css-1r7jzhg {
 
 div.suggestion.css-1dkgpmk {
   font-size: 6px;
-  background-color: #222222;
+  background-color: #222;
   border-color: #434343;
 }
 
@@ -206,4 +206,16 @@ div.ad-ext-player.ad-ext-player-active.css-1en42kf {
 }
 .css-1emway5 {
   grid-column: 1 / 3;
+}
+div.chakra-menu__menu-list.css-yskgbr {
+  background-color: #434343;
+}
+
+button.chakra-tabs__tab.css-1vm7g5b {
+  color: #9fdb58;
+  
+}
+
+span.chakra-switch__track.css-v4l15v {
+  background-color: #38761d;
 }
