@@ -219,3 +219,7 @@ button.chakra-tabs__tab.css-1vm7g5b {
 span.chakra-switch__track.css-v4l15v {
   background-color: #38761d;
 }
+
+button.chakra-tabs__tab.css-1pjn7in {
+  color: #9fdb58;
+}
