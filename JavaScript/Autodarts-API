@@ -4,7 +4,6 @@
 // - Prüft vor jeder API-Abfrage, ob der Board-Manager erreichbar ist
 // - Vermeidet Log-Spam, wenn das Gerät aus ist
 // - Setzt Datenpunkt "reachable" (true/false)
-// - Alle bekannten Features bleiben erhalten
 
 const http = require("http");
 const net = require("net");
