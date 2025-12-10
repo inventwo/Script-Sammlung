@@ -1,8 +1,9 @@
 /* ----- */
 /*  skvarel Theme  */
-/*  Stylebot Code für Autodarts  */
-/*  Version 1.2.0 - Stand: 10.12.2025  */
 /*  ohne AVG  */
+/*  Stylebot Code für Autodarts  */
+/*  Version 1.2.0 */
+/* Stand: 10.12.2025  */
 /* ----- */
 :root{
   --theme-bg: #000000;
