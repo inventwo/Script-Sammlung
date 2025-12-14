@@ -3,7 +3,7 @@
 // - Version: 0.0.1-beta
 // =================================================
 // - Legt Datenpunkte beim Start an
-// - Ermittelt die Summe einer Visit (3 Darts)
+// - Ermittelt die Summe eines Visit (3 Darts)
 // - Trigger feuert IMMER, auch bei gleicher Summe
 
 const http = require("http");
@@ -110,6 +110,6 @@ function fetchAutodarts() {
 
 // --------------------------------------------------
 // Start
-initStates();      // <<< JETZT RICHTIG
+initStates();
 fetchAutodarts();
 setInterval(fetchAutodarts, INTERVAL);
