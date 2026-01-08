@@ -237,6 +237,11 @@ button.chakra-button.css-xrup10 {
 a.chakra-button.css-xrup10 {
   background-color: #333;
 }
+/* Board Scale */
+div.css-aiihgx {
+  height: 120%;
+  margin-top: 30px;
+}
 /* LOGO */
 #autodarts-tools-zoom-center .css-rrf7rv {
     opacity: 1;
