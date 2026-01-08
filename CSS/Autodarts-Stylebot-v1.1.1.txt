@@ -246,7 +246,7 @@ div.css-aiihgx {
 #autodarts-tools-zoom-center .css-rrf7rv {
     opacity: 1;
     background-image: url(https://raw.githubusercontent.com/inventwo/ioBroker.autodarts/main/admin/autodarts.svg);
-    /* background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/CSS/dartort_o2.png);  */
+    /* background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/CSS/Logos/dartort_o2.png);  */
     background-repeat: no-repeat;
     background-position: center;
     background-color: #ffffff00;
