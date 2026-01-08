@@ -177,31 +177,25 @@ div.css-y3hfdd > p{
   top: inherit;
   bottom: 0;
 }
-
 div.chakra-stack.navigation.css-ege71s {
   background-color: #222;
   
 }
-
 p.chakra-text.ad-ext-player-score.css-18w03sn {
   color: #9fdb58;
 }
-
 span.css-3fr5p8 {
   background-color: #9fdb58;
   color: #222;
 }
-
 p.chakra-text.ad-ext-player-score.css-1r7jzhg {
   color: #9fdb58;
 }
-
 div.suggestion.css-1dkgpmk {
   font-size: 6px;
   background-color: #222;
   border-color: #434343;
 }
-
 div.ad-ext-player.ad-ext-player-active.css-1en42kf {
   border-color: #434343;
   border-style: solid;
@@ -215,15 +209,33 @@ div.chakra-menu__menu-list.css-yskgbr {
 
 button.chakra-tabs__tab.css-1vm7g5b {
   color: #9fdb58;
-  
 }
-
 span.chakra-switch__track.css-v4l15v {
   background-color: #38761d;
 }
-
 button.chakra-tabs__tab.css-1pjn7in {
   color: #9fdb58;
+}
+div.chakra-alert.css-lg8flz {
+  background-color: #434343;
+}
+header.chakra-modal__header.css-w0hk7h {
+  background-color: #666666;
+  border-radius: 10px 10px 0px 0px;
+}
+div.chakra-modal__body.css-1uz8bup {
+  background-color: #434343;
+}
+footer.chakra-modal__footer.css-k0waxj {
+  color: #ffffff;
+  background-color: #434343;
+  border-radius: 0px 0px 10px 10px;
+}
+button.chakra-button.css-xrup10 {
+  background-color: #333;
+}
+a.chakra-button.css-xrup10 {
+  background-color: #333;
 }
 /* LOGO */
 #autodarts-tools-zoom-center .css-rrf7rv {
