@@ -26,7 +26,7 @@ div.chakra-stack.navigation.css-19ml6yu {
 span.chakra-badge.css-1g1qw76 {
   font-size: 30px;
   background-color: var(--theme-player-name-bg);
-  // display: none
+  /* display: none */
 }
 p.chakra-text.css-0 {
   font-size: 30px;
