@@ -2,7 +2,7 @@
 /* skvarel Theme */
 /* Stylebot Code für Autodarts */
 /* Version 1.1.1 */
-/* mit Logo und Hintergrund - Pfad ganz unten anpassen*/
+/* mit Logo und Hintergrund */
 /* Stand: 03.04.2026 */
 /* ----- */
 :root{
@@ -248,7 +248,7 @@ a.chakra-button.css-xrup10 {
 /* LOGO */
 #autodarts-tools-zoom-center .css-rrf7rv {
   opacity: 1;
-  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/CSS/Logos/dartort_o3.png);
+  background-image: url(https://raw.githubusercontent.com/inventwo/ioBroker.autodarts/main/admin/autodarts.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff00;
