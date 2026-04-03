@@ -1,10 +1,10 @@
-/* ----- */
+/* --------------- */
 /* skvarel Theme */
 /* Stylebot Code für Autodarts */
 /* Version 3.0.0 */
 /* mit Logo und Hintergrund */
 /* Stand: 03.04.2026 */
-/* ----- */
+/* --------------- */
 :root{
   --theme-bg: rgba(0, 0, 0, 0.6);
   --theme-text-color: #000000;
@@ -26,7 +26,8 @@ div.chakra-stack.navigation.css-19ml6yu {
 span.chakra-badge.css-1g1qw76 {
   font-size: 30px;
   background-color: var(--theme-player-name-bg);
-  /* display: none */
+/* AVG ausblenden */  
+/* display: none */
 }
 p.chakra-text.css-0 {
   font-size: 30px;
@@ -246,29 +247,6 @@ button.chakra-button.css-xrup10 {
 a.chakra-button.css-xrup10 {
   background-color: #333;
 }
-/* LOGO */
-#autodarts-tools-zoom-center .css-rrf7rv {
-  opacity: 1;
-  background-image: url(https://raw.githubusercontent.com/inventwo/ioBroker.autodarts/main/admin/autodarts.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff00;
-  border-color: #ffffff00;
-}
-/* Ingame Wallpaper*/
-:root:has(.css-1cdcn26) body {
-  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 140%;
-  background-position: 26px;
-}
-/* Offgame Wallpaper*/
-:root:not(:has(.css-1cdcn26)) body {
-  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 140%;
-  background-position: 26px;
-}
 div.css-1c7nfs0 {
   background-color: rgba(35, 35, 35, 0.9);
 }
@@ -285,4 +263,35 @@ div.score.css-156dsds {
 p.chakra-text.ad-ext-turn-points.css-1lvci65 {
   color:#333;
   font-weight: bold;
+}
+a svg path {
+  color:#9fdb58;
+}
+div svg path {
+  color:#9fdb58;   
+}
+/* --------------- */
+/* LOGO- und Hintergrund-Pfade*/
+/* LOGO */
+#autodarts-tools-zoom-center .css-rrf7rv {
+  opacity: 1;
+  background-image: url(https://raw.githubusercontent.com/inventwo/ioBroker.autodarts/main/admin/autodarts.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff00;
+  border-color: #ffffff00;
+}
+/* Ingame Hintergrund*/
+:root:has(.css-1cdcn26) body {
+  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 140%;
+  background-position: 26px;
+}
+/* Offgame Hintergrund*/
+:root:not(:has(.css-1cdcn26)) body {
+  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 140%;
+  background-position: 26px;
 }
