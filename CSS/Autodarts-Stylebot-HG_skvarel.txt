@@ -283,14 +283,14 @@ span.chakra-badge.css-1g1qw76 {
 }
 /* Ingame Hintergrund*/
 :root:has(.css-1cdcn26) body {
-  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
+  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/CSS/HG/BlackWhite.jpg);
   background-repeat: no-repeat;
   background-size:100% 140%;
   background-position: 26px;
 }
 /* Offgame Hintergrund*/
 :root:not(:has(.css-1cdcn26)) body {
-  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/HG/BlackWhite.jpg);
+  background-image: url(https://raw.githubusercontent.com/inventwo/Script-Sammlung/refs/heads/main/CSS/HG/BlackWhite.jpg);
   background-repeat: no-repeat;
   background-size:100% 140%;
   background-position: 26px;
