@@ -1,7 +1,7 @@
 /* ----- */
 /* skvarel Theme */
 /* Stylebot Code für Autodarts */
-/* Version 1.1.1 */
+/* Version 3.0.0 */
 /* mit Logo und Hintergrund */
 /* Stand: 03.04.2026 */
 /* ----- */
