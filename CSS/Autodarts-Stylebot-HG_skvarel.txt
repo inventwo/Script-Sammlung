@@ -264,6 +264,9 @@ a svg path {
 div svg path {
   color:#9fdb58;   
 }
+svg g path {
+  fill:#9fdb58;  
+}
 span.chakra-badge.css-1g1qw76 {
   font-size: 30px;
   background-color: var(--theme-player-name-bg);
