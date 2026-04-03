@@ -23,12 +23,6 @@ div.css-tkevr6 {
 div.chakra-stack.navigation.css-19ml6yu {
   background-color: var(--theme-navigation-bg);
 }
-span.chakra-badge.css-1g1qw76 {
-  font-size: 30px;
-  background-color: var(--theme-player-name-bg);
-/* AVG ausblenden */  
-/* display: none */
-}
 p.chakra-text.css-0 {
   font-size: 30px;
 }
@@ -269,6 +263,12 @@ a svg path {
 }
 div svg path {
   color:#9fdb58;   
+}
+span.chakra-badge.css-1g1qw76 {
+  font-size: 30px;
+  background-color: var(--theme-player-name-bg);
+/* AVG ausblenden */  
+/* display: none */
 }
 /* --------------- */
 /* LOGO- und Hintergrund-Pfade*/
